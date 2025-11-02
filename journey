@@ -1,0 +1,42 @@
+The way i started was cuz i wanted to write a simple program to take a number and tell me its table pretty simple.
+
+Though i unironically screwed it. I wrote scanf("%d", num) and forgot '&'
+
+oh well that ended up perfectly... wrong.
+
+Basically scanf takes a input and picks it to the memory location metioned after this comma. So it reads num as a memory adress which means nothing even normally.
+
+But here it was unitialized. So C picked up some garbage value and thew it in num which got read as a memory adress to be written to.
+
+Well we will never know what that value was but the OS interverened over my Screw up so it was probably somewhere stupid.
+
+I further fixed a few things cuz magic numbers are bad so i made a few cont variables.
+
+But then i asked chatgpt on how the code looked and it said i could add some Defensive input handling basically - 
+if (scanf("%d", &number) != 1) {
+    fprintf(stderr, "Invalid input.\n");
+    return 1;
+}
+It said "That way, your code won’t proceed with garbage if someone enters a letter."
+
+I unironically did it and luckily my num was initialized to 0 this time so everything in the table was 0.
+But the point is that it failed to read it and is now giving garbage result.
+
+and the input is still in the input buffer so next time you call scanf it will read that and give garbage.
+
+You might even read garbage constantly and keep failing in a infinite loop. Imagine that one bad clik and boom infinite loop
+
+C truly lets you shoot yourself in the foot.
+
+So i thought i can fix this. SPOILER it wont end well.
+
+So i asked chtgpt to give me a better way to tase this input. it recomended me weired strtol strcspn in this fegets. 
+
+It is like what is fgets btw? Oh it simply takek a buffer and throws stuff from input to it bsed on the size. 
+
+Okay i can probably red it like a normal person and loop it. The only problem is implemetation sucks.
+
+So i decided insted of this funtion returing int it would return a sting which i can later convert to numbers if they can be converted otherwise they are basically error messages.
+
+TO BE UPDATED......
+
