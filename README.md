@@ -18,7 +18,7 @@ A demonstration of **safe integer input in C** using **Rust** for validation. C 
 ## 📂 Project Structure
 
 ```
-table_project/
+int-input-in-C/
 │
 ├─ rust_input/                # Rust backend
 │   ├─ src/lib.rs             # Rust input logic
@@ -100,4 +100,5 @@ make test
 
 ---
 Python integration tests simulate user input and verify C table output.
+
 
