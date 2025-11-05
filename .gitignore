@@ -1,0 +1,11 @@
+# Rust build artifacts
+rust_input/target/
+rust_input/Cargo.lock
+
+# C build artifacts
+c_logic/table
+
+# OS/editor stuff
+*.swp
+*.DS_Store
+*.log

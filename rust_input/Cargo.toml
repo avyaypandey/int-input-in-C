@@ -1,0 +1,11 @@
+[package]
+name = "rust_input"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[lib]
+name = "read_input"
+crate-type = ["staticlib"]
+
